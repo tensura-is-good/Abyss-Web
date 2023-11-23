@@ -5,10 +5,5 @@
   },
   "env": {
     "NODE_ENV": "production"
-  },
-  "addons": [
-    {
-      "plan": "heroku-nodejs"
-    }
-  ]
+  }
 }
