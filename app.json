@@ -1,0 +1,14 @@
+{
+  "name": "Abyss-Web",
+  "scripts": {
+    "postdeploy": "npm install && npm start"
+  },
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "addons": [
+    {
+      "plan": "heroku-nodejs"
+    }
+  ]
+}
