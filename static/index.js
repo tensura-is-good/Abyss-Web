@@ -50,18 +50,21 @@ switch (chosenBackend) {
     break;
 }
 
+var themeSelected = localStorage.getItem("theme") || "Abyss (Moon)";
+
 function themeSwitch(sel) {
   tHs.setActiveTheme(tHs.getThemeFromName(sel.value));
   document.querySelectorAll("select").forEach((e) => {
     e.value = sel.value;
   });
+  localStorage.setItem("theme", sel.value);
 }
 
 function log() {
   setTimeout(
     console.log.bind(
       console,
-      "%cAbyss Version 6",
+      "%cAbyss Web",
       "background: #6670FF;color:#FFF;padding:5px;border-radius: 5px;line-height: 26px; font-size:30px;"
     )
   );
@@ -341,8 +344,9 @@ const runService = async (url) => {
               e.classList.remove("active");
             });
             settingsTemplate.querySelector("." + chosenBackend).classList.add("active");
-            settingsTemplate.querySelector(".panic").placeholder = "Selected Panic Keys: " + window.panicKeys.join(" + ");
-            settingsTemplate.querySelector(".panicURL").value = window.panicURL;
+	    if (window.panicKeys !== null) {
+              settingsTemplate.querySelector(".panic").placeholder = "Selected Panic Keys: " + window.panicKeys.join(" + ");
+            }            settingsTemplate.querySelector(".panicURL").value = window.panicURL;
             settingsTemplate.querySelector(".tabTitle").placeholder = localStorage.getItem("title") || "Abyss";
             settingsTemplate.querySelector(".tabIcon").placeholder = localStorage.getItem("favicon") || "Default Favicon";
             activeTab.getConnectedElement().querySelector("span").innerText =
@@ -574,6 +578,9 @@ function getThemes() {
         );
         tHs.addTheme(new Theme(themeURL, themeName));
         addDropElem(themeName);
+      }
+        if (localStorage.getItem("theme") != null &&  tHs.getThemeFromName(localStorage.getItem("theme"))) {
+        tHs.setActiveTheme(tHs.getThemeFromName(localStorage.getItem("theme")));
       }
     });
 }
