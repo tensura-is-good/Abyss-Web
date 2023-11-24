@@ -1,4 +1,6 @@
 [![Deploy to Heroku](https://binbashbanana.github.io/deploy-buttons/buttons/remade/heroku.svg)](https://heroku.com/deploy/?template=https://github.com/AbyssServices/Abyss-Web)
+[![Run on Replit](https://binbashbanana.github.io/deploy-buttons/buttons/remade/replit.svg)](https://replit.com/github/AbyssServices/Abyss-Web)
+
 # Abyss Web
 Abyss is an advanced proxy service that provides modern unblocking for all users who use it.
 
