@@ -403,7 +403,7 @@ const runService = async (url) => {
           break;
         case "dynamic":
           iframe.src =
-            "/classes/route?url=" +
+            "/classes/dyn/route?url=" +
             encodeURIComponent(url);
           break;
         default:
