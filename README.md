@@ -1,5 +1,5 @@
 [![Deploy on Railway](https://binbashbanana.github.io/deploy-buttons/buttons/remade/railway.svg)](https://railway.app/template/hIFYVf?referralCode=8zUpBt)
-[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?type=docker&image=docker.io/greenydev/abysswebproxy&name=abyss-web)
+[![Deploy to Koyeb](https://binbashbanana.github.io/deploy-buttons/buttons/remade/koyeb.svg)](https://app.koyeb.com/deploy?type=docker&image=docker.io/greenydev/abysswebproxy&name=abyss-web)
 
 # Abyss Web
 Abyss is an advanced proxy service that provides modern unblocking for all users who use it.
