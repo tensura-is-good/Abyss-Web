@@ -17,6 +17,7 @@ self.addEventListener("fetch", (event) => {
       }
 
       if (event.request.url.startsWith(location.origin + "/classes/uv/")) {
+        console.log('uLTRAVIOLET')
         return await uv.fetch(event);
       }
 
