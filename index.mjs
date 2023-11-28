@@ -1,6 +1,5 @@
 import { createBareServer } from "@tomphttp/bare-server-node";
 // const createBareServer = bareServerNode.createBareServer;
-import { uvPath } from "@titaniumnetwork-dev/ultraviolet";
 import express from "express";
 import http from "http";
 import { dirname, join } from "path";
@@ -23,13 +22,13 @@ const __dirname = dirname(__filename);
 
 app.use(compression());
 app.use(express.static(__dirname + "/static/"));
-app.use("/uv/", express.static(uvPath));
-app.use("/dynamic/", express.static(__dirname + "/dynamic/"));
+app.use("/class/", express.static(__dirname + "/services/uv/"));
+app.use("/work/", express.static(__dirname + "/services/dynamic/"));
 
 app.use((req, res) => {
   res.status(404);
   res.send(
-    "<style>*{background:black;color:white;font-size:36px}</style>404<br /><br /><br />yikes"
+    `<style>body{font-family:Roboto,sans-serif;background-color:#111;text-align:center;padding:50px;}.container{background-color:#111;border-radius:5px;box-shadow:0px 0px 10px rgba(0,0,0,0.1);padding:20px;}h1{font-size:48px;color:#fff;margin-bottom:20px;}p{font-size:18px;color:#fff;}a{text-decoration:none;color:lightgreen;}a:hover{text-decoration:underline;}</style><div class="container"><h1>404 :(</h1><p>The page you are looking for might have been removed or does not exist.</p><p>Open a new tab to continue.</a></p></div>`
   );
 });
 

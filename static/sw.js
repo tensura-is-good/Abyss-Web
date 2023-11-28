@@ -1,8 +1,8 @@
-importScripts("/dynamic/dynamic.config.js");
-importScripts("/dynamic/dynamic.worker.js");
-importScripts("/uv/uv.bundle.js");
-importScripts("/uv/uv.config.js");
-importScripts("/uv/uv.sw.js"); // override because the support for UV is complete dogshit
+importScripts("/work/dynamic.config.js");
+importScripts("/work/dynamic.worker.js");
+importScripts("/class/uv.bundle.js");
+importScripts("/class/uv.config.js");
+importScripts("/class/uv.sw.js"); // override because the support for UV is complete dogshit
 
 const uv = new UVServiceWorker();
 const dynamic = new Dynamic();
@@ -16,7 +16,7 @@ self.addEventListener("fetch", (event) => {
         return await dynamic.fetch(event);
       }
 
-      if (event.request.url.startsWith(location.origin + "/service/uv/")) {
+      if (event.request.url.startsWith(location.origin + "/classes/uv/")) {
         return await uv.fetch(event);
       }
 

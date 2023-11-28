@@ -9,7 +9,7 @@ let workerLoaded;
 
 async function worker() {
   return await navigator.serviceWorker.register("/sw.js", {
-    scope: "/service",
+    scope: "/classes",
   });
 }
 
@@ -398,11 +398,12 @@ const runService = async (url) => {
       //   encodeURIComponent(url);
       switch (chosenBackend) {
         case "uv":
-          iframe.src = __uv$config.prefix + __uv$config.encodeUrl(url);
+          iframe.src = 
+            '/classes/uv/' + __uv$config.encodeUrl(url);
           break;
         case "dynamic":
           iframe.src =
-            "/service/route?url=" +
+            "/classes/route?url=" +
             encodeURIComponent(url);
           break;
         default:

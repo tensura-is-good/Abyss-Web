@@ -1,7 +1,7 @@
 // See documentation for more information 
 
 self.__dynamic$config = {
-  prefix: '/service/',
+  prefix: '/classes/',
   encoding: 'xor',
   mode: 'production', 
   logLevel: 0, 
@@ -10,12 +10,12 @@ self.__dynamic$config = {
     path: '/bare/',
   },
   tab: {
-    title: 'Service',
+    title: 'Website',
     icon: null,
     ua: null,
   },
   assets: {
-    prefix: '/dynamic/',
+    prefix: '/work/',
     files: {
       handler: 'dynamic.handler.js',
       client: 'dynamic.client.js',
